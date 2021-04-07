@@ -1,5 +1,5 @@
 # SuperHeroApp
-This app helps to search Super Heroes, Filter them and to Favorite list. 
+This app helps to user to search Super Heroes, Filter them and add them to Favorite list. 
 
 ## Uses
 - MVVM Pattern
