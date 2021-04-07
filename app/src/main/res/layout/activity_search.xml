@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.SearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/noHeroFoundSearchActivity"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:padding="14dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_500"
+            android:textSize="24sp"
+            android:text="Sorry!! No data Found for the Searched Superhero"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_nodata"
+            android:layout_height="wrap_content"
+            android:text="No Hero Found"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_hero" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarSearchHero"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

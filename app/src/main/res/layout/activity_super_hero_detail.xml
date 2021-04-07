@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="14dp"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.SuperHeroDetailActivity">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="14dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/purple_200"
+        android:id="@+id/detailCv"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/detailHeroIv"
+                tools:src="@tools:sample/avatars"
+                android:layout_height="250dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/detailHeroIv"
+                android:padding="14dp"
+                android:id="@+id/nameRl"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/red_500"
+                    android:textStyle="bold"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:id="@+id/detailHeroNameTv"
+
+                    tools:text="Batman"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:src="@drawable/abc_vector_test"
+                    android:background="@drawable/icon_bg"
+                    android:padding="5sp"
+                    android:id="@+id/genderIcon"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@+id/detailHeroNameTv"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fullNameTv"
+                    android:textColor="@color/red_500"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    tools:text="Full Name"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/nameRl"
+                android:padding="14dp"
+                android:id="@+id/bioRl"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/publisherTv"
+                        android:maxLength="15"
+                        android:textColor="@color/red_500"
+                        android:textSize="20sp"
+
+                        tools:text="Marvels "
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/alignment"
+
+                        android:textSize="20sp"
+                        android:textColor="@color/red_500"
+                        android:text="Alignment: "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/alignmentTv"
+                        android:textSize="20sp"
+                        android:textColor="@color/red_500"
+                        android:layout_toRightOf="@+id/alignment"
+                        tools:text="Good"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/bioRl"
+                android:padding="14dp"
+                android:id="@+id/strRl"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Strength"
+                            android:textSize="20sp"
+                            android:id="@+id/strength"
+                            android:textColor="@color/red_500"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/strength"
+                            android:layout_marginLeft="14dp"
+                            tools:text="58%"
+                            android:id="@+id/strengthTv"
+                            android:textColor="@color/red_500"
+                            android:textSize="20sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="14dp"
+                            android:padding="5sp"
+                            android:background="@drawable/icon_bg"
+                            android:src="@drawable/ic_strength"/>
+
+
+
+                    </RelativeLayout>
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:id="@+id/strengthProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:layout_marginTop="14dp"
+                        android:progress="0"/>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/strRl"
+                android:padding="14dp"
+                android:id="@+id/speedRl"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Speed"
+                            android:textSize="20sp"
+                            android:id="@+id/speed"
+                            android:textColor="@color/red_500"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/speed"
+                            android:layout_marginLeft="14dp"
+                            tools:text="58%"
+                            android:id="@+id/speedTv"
+                            android:textColor="@color/red_500"
+                            android:textSize="20sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="14dp"
+                            android:padding="5sp"
+                            android:background="@drawable/icon_bg"
+                            android:src="@drawable/ic_baseline_speed_24"/>
+
+
+
+                    </RelativeLayout>
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:id="@+id/speedProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:layout_marginTop="14dp"
+                        android:progress="0"/>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/speedRl"
+                android:padding="14dp"
+                android:id="@+id/intelligenceRl"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Intelligence"
+                            android:textSize="20sp"
+                            android:id="@+id/intelligence"
+                            android:textColor="@color/red_500"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/intelligence"
+                            android:layout_marginLeft="14dp"
+                            tools:text="58%"
+                            android:id="@+id/intelligenceTv"
+                            android:textColor="@color/red_500"
+                            android:textSize="20sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="14dp"
+                            android:padding="5sp"
+                            android:background="@drawable/icon_bg"
+                            android:src="@drawable/ic_baseline_menu_book_24"/>
+
+
+
+                    </RelativeLayout>
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:id="@+id/intelligenceProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:layout_marginTop="14dp"
+                        android:progress="0"/>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/intelligenceRl"
+                android:padding="14dp"
+                android:id="@+id/powerRl"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Power"
+                            android:textSize="20sp"
+                            android:id="@+id/power"
+                            android:textColor="@color/red_500"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/power"
+                            android:layout_marginLeft="14dp"
+                            tools:text="58%"
+                            android:id="@+id/powerTv"
+                            android:textColor="@color/red_500"
+                            android:textSize="20sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="14dp"
+                            android:padding="5sp"
+                            android:background="@drawable/icon_bg"
+                            android:src="@drawable/ic_baseline_power_24"/>
+
+
+
+                    </RelativeLayout>
+                    <ProgressBar
+                        android:id="@+id/powerProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:layout_marginTop="14dp"
+                        android:progress="0"/>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFav"
+                android:layout_below="@+id/powerRl"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_bg"
+                android:layout_marginBottom="7dp"
+                android:text="Add to Favoirte"/>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarDetailHero"
+        android:elevation="15dp"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>
+</ScrollView>

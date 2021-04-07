@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent"
+
+    android:elevation="10dp"
+    tools:context=".ui.view.MainActivity"
+    >
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:id="@+id/dashboardTv"
+      android:layout_centerHorizontal="true"
+       android:layout_height="wrap_content"
+
+      android:layout_marginBottom="75dp">
+
+   </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="225dp"
+       android:id="@+id/comic_bg"
+       android:background="@drawable/ic_comic_bg">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:text="My Dashboard"
+          android:textStyle="bold"
+          android:layout_marginLeft="14dp"
+          android:layout_marginTop="14dp"
+
+          android:textSize="28sp"/>
+   </RelativeLayout>
+
+
+   <SearchView
+       android:layout_width="match_parent"
+       android:background="@drawable/searchview_background"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="14dp"
+       android:layout_below="@+id/dashboardTv"
+      android:elevation="10dp"
+       android:iconifiedByDefault="false"
+       android:queryBackground="@null"
+
+       android:layout_margin="14dp"
+       android:queryHint="Search Superhero"
+       android:id="@+id/searchView"
+        />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:id="@+id/llRow"
+       android:layout_below="@+id/searchView"
+       android:layout_margin="14dp"
+      android:weightSum="2"
+       android:layout_height="wrap_content">
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_gravity="center"
+          android:layout_height="wrap_content">
+         <androidx.cardview.widget.CardView
+             android:layout_width="0dp"
+             android:layout_height="230dp"
+             app:cardCornerRadius="17dp"
+             android:layout_margin="8dp"
+             android:id="@+id/favHeroCv"
+             android:layout_weight="1"
+             android:elevation="10dp"
+             android:background="@color/white"
+             >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="14dp"
+                android:layout_height="match_parent">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/red_700"
+
+                   android:layout_alignParentStart="true"
+                   android:layout_gravity="center_horizontal"
+                   android:textSize="23sp"
+                   android:textStyle="bold"
+                   android:text="My\nFavourites"/>
+               <ImageView
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_alignParentRight="true"
+                   android:background="@drawable/icon_bg"
+                   android:padding="4dp"
+                   android:src="@drawable/ic_baseline_favorite_border_24"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:textStyle="bold"
+                   android:gravity="center_horizontal"
+                   android:textSize="75sp"
+                   android:id="@+id/favoriteNo"
+                   android:textColor="@color/red_700"
+                   android:text="3"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/favoriteNo"
+                   android:textStyle="bold"
+                   android:textColor="@color/red_700"
+                   android:gravity="center_horizontal"
+                   android:text="Heroes"/>
+
+            </RelativeLayout>
+
+
+         </androidx.cardview.widget.CardView>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="0dp"
+         android:layout_weight="1"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                app:cardCornerRadius="17dp"
+                android:elevation="10dp"
+                android:id="@+id/filterCv"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                >
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:padding="14dp"
+                   android:layout_height="match_parent">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/red_700"
+
+                      android:layout_alignParentStart="true"
+                      android:layout_gravity="center_horizontal"
+                      android:textSize="23sp"
+                      android:textStyle="bold"
+                      android:text="Filter"/>
+                  <ImageView
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_alignParentRight="true"
+                      android:background="@drawable/icon_bg"
+                      android:padding="4dp"
+                      android:src="@drawable/ic_baseline_filter_list_24"/>
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_centerInParent="true"
+                      android:layout_alignParentBottom="true"
+                      android:textStyle="bold"
+                      android:gravity="center_horizontal"
+                      android:textSize="15sp"
+
+                      android:textColor="@color/red_700"
+                      android:text="Filter Your Heroes "/>
+
+
+               </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                app:cardCornerRadius="17dp"
+                android:id="@+id/allHeroCv"
+                android:elevation="10dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:padding="14dp"
+                   android:layout_height="match_parent">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/red_700"
+
+                      android:layout_alignParentStart="true"
+                      android:layout_gravity="center_horizontal"
+                      android:textSize="23sp"
+                      android:textStyle="bold"
+                      android:text="All\nHeroes"/>
+                  <ImageView
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_alignParentRight="true"
+                      android:background="@drawable/icon_bg"
+                      android:padding="4dp"
+                      android:src="@drawable/ic_baseline_person_search_24"/>
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_centerInParent="true"
+                      android:layout_alignParentBottom="true"
+                      android:textStyle="bold"
+                      android:gravity="center_horizontal"
+                      android:textSize="15sp"
+
+                      android:textColor="@color/red_700"
+                      android:text="732 Total Heroes "/>
+
+
+               </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+         </LinearLayout>
+
+
+      </LinearLayout>
+
+
+
+
+   </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:layout_below="@+id/llRow"
+       android:layout_alignParentBottom="true"
+       android:layout_margin="14dp"
+       android:layout_height="wrap_content">
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_hero"/>
+
+   </LinearLayout>
+
+
+</RelativeLayout>
