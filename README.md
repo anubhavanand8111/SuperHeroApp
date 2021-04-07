@@ -15,5 +15,5 @@ This app helps to search Super Heroes, Filter them and to Favorite list.
 
 ![Screenshot_2021-04-07-21-02-05-950_com anubhav superheroapp](https://user-images.githubusercontent.com/56479904/113914270-01570e00-97fb-11eb-8d09-50d0a84e1474.jpg)
 
-## Download app
+## Download apk
 https://drive.google.com/file/d/1DDhMv0frfjrkZtvtBMjhgmsJf5CWGEC3/view?usp=sharing
