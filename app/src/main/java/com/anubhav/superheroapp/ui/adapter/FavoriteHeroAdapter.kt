@@ -31,6 +31,11 @@ class FavoriteHeroAdapter(private val data: ArrayList<HeroIdData>, private val c
             DiskCacheStrategy.ALL).into(holder.iv)
     }
 
+    override fun getItemId(position: Int): Long {
+
+        return data[position].id.toLong()
+    }
+
     override fun getItemCount()=data.size
 
    class FavoriteHeroViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

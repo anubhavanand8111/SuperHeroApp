@@ -29,33 +29,42 @@ class FavoriteHeroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite_hero)
+
         deleteOnSwipe()
 
+        getFavHeroList()
+
+
+
+    }
+
+    private fun getFavHeroList() {
         GlobalScope.launch(Dispatchers.IO) {
             applicationContext?.let {
                 val idList = FavIdDatabase(it).getFavHeroDao().getFavHeroId()
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
 
 
-                    favHeroList=idList
+                    favHeroList = idList
 
                     favHeroRv.apply {
                         layoutManager = LinearLayoutManager(this@FavoriteHeroActivity)
-                        adapter = FavoriteHeroAdapter(favHeroList as ArrayList<HeroIdData>,this@FavoriteHeroActivity)
-
+                        adapter = FavoriteHeroAdapter(
+                            favHeroList as ArrayList<HeroIdData>,
+                            this@FavoriteHeroActivity
+                        )
+                        adapter?.notifyDataSetChanged()
                     }
-                    if (favHeroList?.isNullOrEmpty() == true){
-                        noHeroFoundFavoriteActivity.visibility=View.VISIBLE
+                    if (favHeroList?.isNullOrEmpty() == true) {
+                        noHeroFoundFavoriteActivity.visibility = View.VISIBLE
                     }
                 }
 
             }
 
         }
-
-
-
     }
+
     fun deleteOnSwipe(){
         val simpleItemTouchCallback=object :ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT){
             override fun onMove(
@@ -76,7 +85,7 @@ class FavoriteHeroActivity : AppCompatActivity() {
                                )
                            }
                             withContext(Dispatchers.Main){
-                                //Toast.makeText(, "", Toast.LENGTH_SHORT).show()
+
                                 Snackbar.make(favLayout,"Deleted",Snackbar.LENGTH_SHORT).show()
 
                             }
@@ -84,10 +93,12 @@ class FavoriteHeroActivity : AppCompatActivity() {
                         }
 
                     }
-                    favHeroRv.apply {
-                        adapter?.notifyDataSetChanged()
-                    }
+                    getFavHeroList()
+
                 }
+
+
+
 
             }
 
@@ -100,28 +111,6 @@ class FavoriteHeroActivity : AppCompatActivity() {
                 actionState: Int,
                 isCurrentlyActive: Boolean
             ) {
-
-
-//                    val itemView=viewHolder.itemView
-//                    val paint=Paint()
-//                    val icon:Bitmap
-//                    if (dX<0){
-//                        icon =BitmapFactory.decodeResource(resources,R.mipmap.ic_launcher)
-//                     paint.color=   Color.parseColor("#389E4C")
-//
-//                        canvas.drawRect(
-//
-//                            itemView.right.toFloat()+dX,itemView.top.toFloat(),
-//                            itemView.right.toFloat(),itemView.bottom.toFloat(),paint
-//                        )
-//
-//                        canvas.drawBitmap(
-//                            icon,itemView.right.toFloat(),
-//                            itemView.top.toFloat()+(itemView.bottom.toFloat()-itemView.top.toFloat()-icon.height ),paint
-//                        )
-//                    }
-//                    viewHolder.itemView.translationX=dX
-
 
                 RecyclerViewSwipeDecorator.Builder(
                     canvas,
@@ -138,7 +127,9 @@ class FavoriteHeroActivity : AppCompatActivity() {
                     .decorate()
                 super.onChildDraw(canvas, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
             }
+
         }
+
         val itemTouchHelper=ItemTouchHelper(simpleItemTouchCallback)
         itemTouchHelper.attachToRecyclerView(favHeroRv)
     }
